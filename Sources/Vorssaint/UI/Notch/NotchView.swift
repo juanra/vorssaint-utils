@@ -322,6 +322,9 @@ struct NotchView: View {
         .padding(.top, service.expandedGeometry.headerTopInset)
         .padding(.bottom, NotchLayout.bottomInset)
         .frame(width: service.expandedSize.width, height: service.expandedSize.height, alignment: .top)
+        // Opening the island makes its panel key, so Keyboard navigation would ring
+        // the first header button. The island is pointer-driven; focus itself stays.
+        .focusEffectDisabled()
     }
 
     /// Keep each page's minimum usable layout reachable when a custom height
