@@ -324,7 +324,7 @@ struct NotchView: View {
         .frame(width: service.expandedSize.width, height: service.expandedSize.height, alignment: .top)
         // Opening the island makes its panel key, so Keyboard navigation would ring
         // the first header button. The island is pointer-driven; focus itself stays.
-        .focusEffectDisabled()
+        .focusEffectDisabled(!service.showsKeyboardFocus)
     }
 
     /// Keep each page's minimum usable layout reachable when a custom height
