@@ -323,7 +323,7 @@ struct NotchView: View {
         .padding(.bottom, NotchLayout.bottomInset)
         .frame(width: service.expandedSize.width, height: service.expandedSize.height, alignment: .top)
         // Opening the island makes its panel key, so Keyboard navigation would ring
-        // the first header button. The island is pointer-driven; focus itself stays.
+        // the first header button. Show the ring once keyboard input begins.
         .focusEffectDisabled(!service.showsKeyboardFocus)
     }
 
